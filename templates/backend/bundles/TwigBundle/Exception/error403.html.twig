@@ -1,0 +1,10 @@
+{% extends '@backend/base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <h1>Accès refusé !</h1>
+        <p>
+            La page demandée est introuvable. Vérifiez s'il y a une faute d'orthographe dans l'URL ou <a href="{{ path('app_dashboard') }}">retournez au panel</a>.
+        </p>
+    </div>
+{% endblock %}

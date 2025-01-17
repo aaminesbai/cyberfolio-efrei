@@ -1,0 +1,66 @@
+{% extends '@frontend/base.html.twig' %}
+
+{% block title %}A propos!{% endblock %}
+
+{% block body %}
+
+<!-- Single Page -->
+<main class="single-page">
+    <!-- Page Header -->
+    <div class="page-header">
+        <h2>.<span>à propos</span></h2>
+        <p>
+        Autodidacte qui ne s'arrête jamais d'apprendre. Mon amour pour la technologie et ma soif de connaissances m'ont poussé à créer mes propres opportunités et à me développer en dehors des sentiers battus. 👨‍💻<br>
+        J'aime relever des défis complexes et trouver des solutions créatives à des problèmes techniques. Mon expérience dans la freelance et dans de nombreux projets perso m'ont donné la liberté de travailler sur des projets passionnants. 💪<br>
+        J'ai tout de même encore beaucoup à apprendre et je suis toujours à la recherche de nouveaux défis pour développer mes compétences. 😉<br>
+        Plus tard, je me projette en tant que développeur polyvalent (ou full-stack) dans le domaine de l'informatique, avec une ouverture d'esprit à tous les langages. ⚙️
+        </p>
+        <div class="template-btn">
+            <a href="/contact" class="pointer-href">Contactez moi</a>
+            <a href="{{ asset('uploads/donnees/cv.pdf') }}" class="pointer-href" target="_blank">Télécharger mon CV</a>
+        </div>
+    </div> 
+    <!-- Page Header End -->
+    <div class="separator"></div>
+    <div class="clients-testimonial subtitle">
+        <h3 class="mb-40">.<span>mes</span> recommendations</h3>
+        <div class="clients-testimonial-active owl-carousel">
+
+        {% if recommendations|length > 0 %}
+            {% for recommendation in testimonials %}
+                <div class="single-testimonials">
+                    <div class="client-image">
+                        <img src="{{ recommendation.image }}" alt="clients">
+                    </div>
+                    <div class="feedback-text">
+                        <p class="client-feedback">{{ recommendation.comment }}</p>
+                        
+                        <p class="client-name">{{ recommendation.name }}, <span>{{ recommendation.position }}</span></p>
+                        <center>
+                        <a href="{{ recommendation.linkedin }}" class="pointer-href" target="_blank"><p><i class="fab fa-linkedin-in"></i></p></a>
+                        </center>
+
+                    </div>
+                </div>
+            {% endfor %}
+            {% else %}
+                <p>Aucune recommendations.</p>
+        {% endif %}
+           
+        </div>            
+    </div> 
+    <!-- Clients Testimonial End -->
+    <!-- Logo Carousel -->
+    <div class="clients-logo-carousel owl-carousel text-center">
+        <img src="{{ asset("frontend/img/clients/php.png") }}" alt="logo">
+        <img src="{{ asset("frontend/img/clients/web.png") }}" alt="logo">
+        <img src="{{ asset("frontend/img/clients/vue.png") }}" alt="logo">
+        <img src="{{ asset("frontend/img/clients/git.png") }}" alt="logo">
+        <img src="{{ asset("frontend/img/clients/docker.png") }}" alt="logo">
+    </div> 
+    <!-- Logo Carousel End -->
+</main> 
+<!-- Single page end -->
+
+
+{% endblock %}

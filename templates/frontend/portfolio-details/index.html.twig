@@ -1,0 +1,89 @@
+{% extends '@frontend/base.html.twig' %}
+
+{% block title %}Détails Portfolio!{% endblock %}
+
+{% block body %}
+ 
+<!-- Single Page -->
+<main class="single-page">
+    <!-- Page Header -->
+    <div class="page-header">
+        <h2><a href="/portfolio" class="pointer-large">.<span>portfolio</span></a>
+            <span>.</span>détails</h2>
+        <p>
+    </div> 
+    <!-- Page Header End -->
+    <div class="separator"></div>
+    <div class="portfolio-details-wrapper">
+        <div class="row">
+            <div class="col-xl-8 col-lg-8">
+                <div class="details-content-left">
+                    <!-- Project Short Info -->
+                    <div class="project-info clearfix mb-20">
+                        <div class="project-head-thumb">
+                            <img src="{{ asset("frontend/img/portfolio/portfolio-details/1.jpg") }}" alt="project thumb">
+                        </div>
+                        <div class="project-overview">
+                            <ul>
+                                <li>Créé le:<a href="#"> {{ portfolio.created_at|date('d-m-Y') }}</a></li>
+                                <li>Client :<a href="#"> {{ portfolio.client }}</a></li>
+                                <li>Catégorie :<a href="#"> {{ portfolio.category }}</a></li>
+                                <li>Site :<a href="{{ portfolio.site_url }}" class="pointer-small"> LIEN</a></li>
+                            </ul>
+                        </div>
+                    </div> 
+                    <!-- Project Short Info End -->
+                    <!-- Project Body -->
+                    <div class="project-body">
+
+                        <a href="{{ portfolio.site_url }}" class="pointer-small"><h3 class="theme-color">{{ portfolio.name }}</h3></a>
+                        
+                        <!-- Project Video -->
+                        <div class="body-feature-video text-center">
+                            <a href="{{ portfolio.link }}" class="popup_video pointer-large"><i class="fas fa-play"></i></a>
+                        </div> 
+                        <!-- Project Video End -->
+
+                        <p>{{ portfolio.note|raw }}</p>
+                        
+                    </div> 
+                    <!-- Project Body End -->
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4">
+                <div class="details-content-right">
+                    <!-- Recent Posts -->
+                    <div class="recent-posts subtitle mb-70">
+                        <h3 class="mb-40">.<span>posts</span> récents</h3>
+                        <ul>
+                        {% if blogs|length > 0 %}
+                            {% for blog in blogs %}
+                            <li>
+                                <a href="/blog-detail/{{ blog.id }}" class="pointer-href">
+                                    <div class="single-post clearfix">
+                                        <div class="post-thumb">
+                                            <img src="{{ blog.image }}" alt="post thumb">
+                                        </div>
+                                        <div class="post-content">
+                                            <h5 class="body-font">{{ blog.title }}</h5>
+                                            <span><i class="fas fa-calendar-alt"></i> {{ blog.created_at|date('d-m-Y')}}</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            {% endfor %}
+                        {% else %}
+                            <p>Aucun blog trouvé.</p>
+                        {% endif %}
+                        </ul>
+                    </div> 
+                    <!-- Recent Posts End -->
+                </div>
+            </div>
+        </div>
+    </div>
+</main> 
+<!-- Single page end -->
+
+{% endblock %}
+

@@ -1,0 +1,95 @@
+{% extends '@frontend/base.html.twig' %}
+
+{% block title %}Blog - Détails!{% endblock %}
+
+{% block body %}
+
+<!-- Single Page -->
+<main class="single-page">
+    <!-- Page Header -->
+    <div class="page-header">
+        <h2><a href="/blog" class="pointer-large">.<span>blog</span></a> <span>.</span>details</h2>
+    </div> <!-- Page Header End -->
+    <div class="separator"></div>
+    <div class="blog-details-wrapper">
+        <div class="row">
+            <div class="col-xl-8 col-lg-8">
+                <div class="details-content-left">
+                    <!-- Blog Header -->
+                    <div class="blog-info clearfix">
+                        <div class="blog-overview-block">
+                            <div class="blog-head-thumb">
+                                <img src="{{ asset("frontend/img/blog/blog-details/thumb-big.jpg") }}" alt="blog photo">
+                            </div>
+                            <div class="blog-overview">
+                                <ul>
+                                    <li><a href="#" class="newsfeed-calendar pointer-small"><i class="fas fa-calendar-alt"></i> {{ blog.created_at|date('d-M-Y') }}</a></li>
+                                    <li><a href="#" class="newsfeed-tag pointer-small"><i class="fas fa-tag"></i> {{ blog.brand }}</a></li>
+                                    <li><a href="#" class="newsfeed-user pointer-small"><i class="fas fa-user"></i> {{ blog.autheur }}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="blog-share-links">
+                            <span>Partager sur:</span>
+                            <ul>
+                                <li><a href="https://twitter.com/intent/tweet?url={{ url('app_blog_detail', {'id': blog.id}, true) }}" class="pointer-href" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="https://api.whatsapp.com/send?text={{ blog.title }}%20-%20{{ url('app_blog_detail', {'id': blog.id}, true) }}" class="pointer-href" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a></li>
+                                <li><a href="https://www.linkedin.com/shareArticle?url={{ url('app_blog_detail', {'id': blog.id}, true) }}" class="pointer-href" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Flexiscode.com.ng/blog-detail%2F{{ blog.id }}%2F" class="pointer-href" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a></li>
+                            </ul>
+                        </div>
+                    </div> <!-- Blog Header End -->
+                    <!-- Blog Body -->
+                    <div class="blog-body">
+                        <h3 class="theme-color">{{ blog.title }}</h3>
+                        <p>{{ blog.contenu|raw }}</p>
+                        
+                        <div class="body-tags mb-50 mt-30">
+                            <h6 class="body-font">TAGS:</h6>
+                            <div class="tag-keywords">
+                                <a href="#" class="pointer-small">téchnologie</a>
+                                <a href="#" class="pointer-small">histoire</a>
+                                <a href="#" class="pointer-small">news</a>
+                            </div>
+                        </div>
+                    </div> 
+                    <!-- Blog Body End -->
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4">
+                <div class="details-content-right">
+                    <!-- Recent Posts -->
+                    <div class="recent-posts subtitle mb-70">
+                        <h3 class="mb-40">.<span>posts</span> récents</h3>
+                        <ul>
+                        {% if blogs|length > 0 %}
+                            {% for blog in blogs %}
+                            <li>
+                                <a href="/blog-detail/{{ blog.id }}" class="pointer-href">
+                                    <div class="single-post clearfix">
+                                        <div class="post-thumb">
+                                            <img src="{{ blog.image }}" alt="post image">
+                                        </div>
+                                        <div class="post-content">
+                                            <h5 class="body-font">{{ blog.title }}</h5>
+                                            <span><i class="fas fa-calendar-alt"></i> {{ blog.created_at|date('d-m-Y')}}</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            {% endfor %}
+                        {% else %}
+                                <p>No blog found.</p>
+                        {% endif %}
+                        </ul>
+                    </div> 
+                    <!-- Recent Posts End -->
+                </div>
+            </div>
+        </div>
+    </div>
+</main> 
+<!-- Single page end -->
+
+{% endblock %}
+

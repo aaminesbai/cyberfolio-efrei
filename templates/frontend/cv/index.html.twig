@@ -1,0 +1,161 @@
+{% extends '@frontend/base.html.twig' %}
+
+{% block title %}Mon CV !{% endblock %}
+
+{% block body %}
+
+<main class="single-page">
+    <div class="page-header">
+        <h2>.<span>cv</span></h2>
+        <p>
+        Étudiant en alternance en développement informatique, spécialisé en React et JavaScript. 
+        Passionné par les technologies modernes et fort d'une expérience pratique, je me démarque par ma capacité à élaborer des solutions efficaces et innovantes.
+        </p>
+        <div class="template-btn">
+            <a href="/contact" class="pointer-href">Contactez moi</a>
+            <a href="{{ asset('uploads/donnees/cv.pdf') }}" class="pointer-href" target="_blank">Télécharger mon CV</a>
+        </div>
+    </div>
+    <div class="separator"></div>
+    <div class="resume-wrapper">
+        <div class="row">
+            <div class="col-xl-8 col-lg-8">
+                <div class="resume-content-left">
+                    <div class="education subtitle mb-70">
+                        <h3 class="mb-40">.<span>formation</span></h3>
+                        <div class="timeline clearfix">
+                            <div class="timeline-item clearfix">
+                                <div class="timeline-left">
+                                    <h6 class="item-period body-font">2022-Présent</h6>
+                                    <span class="item-company">ISTC Lille</span>
+                                </div>
+                                <div class="divider"></div>
+                                <div class="timeline-right">
+                                    <h6 class="item-title body-font">B3 Développement Informatique</h6>
+                                    <p>Actuellement en alternance, j'approfondis mes compétences en React, JavaScript et d'autres technologies modernes.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience subtitle">
+                        <h3 class="mb-40">.<span>expérience</span></h3>
+                        <div class="timeline clearfix">
+                            <div class="timeline-item clearfix">
+                                <div class="timeline-left">
+                                    <h6 class="item-period body-font">Sept.23'-Présent</h6>
+                                    <span class="item-company">Boonty</span>
+                                </div>
+                                <div class="divider"></div>
+                                <div class="timeline-right">
+                                    <h6 class="item-title body-font">Développeur Alternant</h6>
+                                    <p>Participation au développement d'applications web en React, gestion des APIs et collaboration avec des équipes agiles pour livrer des solutions performantes.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item clearfix">
+                                <div class="timeline-left">
+                                    <h6 class="item-period body-font">Juin.21'-Août.22'</h6>
+                                    <span class="item-company">Projets Personnels</span>
+                                </div>
+                                <div class="divider"></div>
+                                <div class="timeline-right">
+                                    <h6 class="item-title body-font">Développeur Indépendant</h6>
+                                    <p>Réalisation de projets personnels et freelance en React et Node.js, 
+                                    avec une expertise particulière dans la création d'interfaces utilisateur fluides et optimisées.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item clearfix">
+                                <div class="timeline-left">
+                                    <h6 class="item-period body-font">Sept.20'-Mai.21'</h6>
+                                    <span class="item-company">Formation en Ligne</span>
+                                </div>
+                                <div class="divider"></div>
+                                <div class="timeline-right">
+                                    <h6 class="item-title body-font">Initiation au Développement</h6>
+                                    <p>Premiers pas dans la programmation avec des cours en ligne axés sur JavaScript, React, et la programmation backend.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4">
+                <div class="resume-content-right">
+                    <div class="skills clearfix">
+                        <div class="developing-skill subtitle">
+                            <h3 class="mb-40">.<span>compétences </span>techniques</h3>
+                            <div class="single-skill">
+                                <div class="skillbar-title"><span>React/Redux</span></div>
+                                <div class="skill-bar-percent">90%</div>
+                                <div class="skillbar clearfix" data-parcent="90%">
+                                    <div class="skillbar-bar"></div>
+                                </div>
+                            </div>
+                            <div class="single-skill">
+                                <div class="skillbar-title"><span>JavaScript/ES6+</span></div>
+                                <div class="skill-bar-percent">90%</div>
+                                <div class="skillbar clearfix" data-parcent="90%">
+                                    <div class="skillbar-bar"></div>
+                                </div>
+                            </div>
+                            <div class="single-skill">
+                                <div class="skillbar-title"><span>Node.js</span></div>
+                                <div class="skill-bar-percent">80%</div>
+                                <div class="skillbar clearfix" data-parcent="80%">
+                                    <div class="skillbar-bar"></div>
+                                </div>
+                            </div>
+                            <div class="single-skill">
+                                <div class="skillbar-title"><span>Git/Docker</span></div>
+                                <div class="skill-bar-percent">80%</div>
+                                <div class="skillbar clearfix" data-parcent="80%">
+                                    <div class="skillbar-bar"></div>
+                                </div>
+                            </div>
+                            <div class="single-skill">
+                                <div class="skillbar-title"><span>HTML/CSS</span></div>
+                                <div class="skill-bar-percent">90%</div>
+                                <div class="skillbar clearfix" data-parcent="90%">
+                                    <div class="skillbar-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="soft-skill subtitle">
+                            <h3 class="mb-40">.<span>compétences </span>personnelles</h3>
+                            <div class="single-skill">
+                                <div class="skillbar-title"><span>Travail d'équipe</span></div>
+                                <div class="skill-bar-percent">90%</div>
+                                <div class="skillbar clearfix" data-parcent="90%">
+                                    <div class="skillbar-bar"></div>
+                                </div>
+                            </div>
+                            <div class="single-skill">
+                                <div class="skillbar-title"><span>Communication</span></div>
+                                <div class="skill-bar-percent">85%</div>
+                                <div class="skillbar clearfix" data-parcent="85%">
+                                    <div class="skillbar-bar"></div>
+                                </div>
+                            </div>
+                            <div class="single-skill">
+                                <div class="skillbar-title"><span>Gestion du temps</span></div>
+                                <div class="skill-bar-percent">80%</div>
+                                <div class="skillbar clearfix" data-parcent="80%">
+                                    <div class="skillbar-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="clients-logo-carousel owl-carousel text-center">
+        <img src="{{ asset("frontend/img/clients/php.png") }}" alt="logo">
+        <img src="{{ asset("frontend/img/clients/web.png") }}" alt="logo">
+        <img src="{{ asset("frontend/img/clients/vue.png") }}" alt="logo">
+        <img src="{{ asset("frontend/img/clients/git.png") }}" alt="logo">
+        <img src="{{ asset("frontend/img/clients/docker.png") }}" alt="logo">
+    </div> 
+</main> 
+
+{% endblock %}

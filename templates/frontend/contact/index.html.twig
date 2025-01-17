@@ -1,0 +1,105 @@
+{% extends '@frontend/base.html.twig' %}
+
+{% block title %}Contact!{% endblock %}
+
+{% block body %}
+
+<!-- Single Page -->
+<main class="single-page">
+    <!-- Page Header -->
+    <div class="page-header">
+        <h2>.<span>contact</span></h2>
+        <p class="contact-title-intro">N'hésitez pas à me contacter !</p>                
+    </div> <!-- Page Header End -->
+    <div class="separator"></div>
+    <div class="contact-header-bg">                
+        <!-- Contact Information -->
+        <div class="contact-info d-flex justify-content-between">
+            <div class="contact-info-box">
+                <div class="icon-box">
+                    <span><i class="fas fa-phone-alt"></i></span>
+                </div>
+                <div class="text-box">
+                    <a href="tel:+33760285495" class="pointer-small">+33 7 60 28 54 95</a>
+                </div>
+            </div>
+            <div class="contact-info-box">
+                <div class="icon-box">
+                    <span><i class="fas fa-paper-plane"></i></span>
+                </div>
+                <div class="text-box">
+                    <a href="mailto:ssbaiamine@gmail.com" class="pointer-small">ssbaiamine@gmail.com</a>
+                </div>
+            </div>
+            <div class="contact-info-box">
+                <div class="icon-box">
+                    <span><i class="fas fa-home"></i></span>
+                </div>
+                <div class="text-box">
+                    <p>Bordeaux, <br>FR</p>
+                </div>
+            </div>
+        </div> <!-- Contact Information End -->
+    </div>
+    <div class="row">
+        <div class="col-xl-6 col-lg-6">                      
+            <!-- Contact Form -->
+            <div class="contact_form">
+
+                {# Flash alerts displays #}
+                {% for type, messages in app.flashes %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{ type }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+
+                {{ form_errors(contactForm) }}
+                
+                {{ form_start(contactForm) }}
+                    <!-- Form Message -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="alert alert-success contact__msg" style="display: none"
+                                role="alert">
+                                Message envoyé!
+                            </div>
+                        </div>
+                    </div> <!-- Form Message End -->
+                    <!-- Form Element -->
+                    <div class="form_input_box">
+                        {{ form_row(contactForm.name, {'label': false})}}
+                    </div>
+                    <div class="form_input_box">
+                        {{ form_row(contactForm.email, {'label': false})}}
+                    </div>
+                    <div class="form_input_box">
+                        {{ form_row(contactForm.subject, {'label': false})}}
+                    </div>
+                    <div class="form_input_box">
+                        {{ form_row(contactForm.message, {'label': false})}}
+                    </div>
+
+                    <button class="form-submit-btn pointer-href" name="submit" type="submit">Envoyer le message</button>
+                    <!-- Form Element End -->
+                {{ form_end(contactForm) }}
+
+            </div> 
+            <!-- Contact Form End -->
+        </div>
+        <div class="col-xl-6 col-lg-6">
+            <div id="map">
+            <iframe class="position-relative rounded w-100 h-100"
+                    src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=efrei bordeaux&amp;t=k&amp;z=19&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                    frameborder="0" style="min-height: 350px; border:0;" allowfullscreen="" aria-hidden="false"
+                    tabindex="0">
+            </iframe>
+            </div>
+        </div>
+    </div>
+</main> 
+<!-- Single page end -->
+
+{% endblock %}
+

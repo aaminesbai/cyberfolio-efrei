@@ -1,0 +1,64 @@
+{% extends '@frontend/base.html.twig' %}
+
+{% block title %}Mon portfolio!{% endblock %}
+
+{% block body %}
+
+<!-- Single Page -->
+<main class="single-page">
+    <!-- Page Header -->
+    <div class="page-header">
+        <h2>.<span>portfolio</span></h2>
+        <p> 
+    </div> 
+    <!-- Page Header End -->
+    <div class="separator"></div>
+    <div class="portfolio-wrapper">
+        <div class="row">
+            <div class="col-xl-12">
+                <!-- Filter Buttons -->
+                <div class="button-group portfolio-btn text-right mb-40">
+                    <button data-toggle="tooltip" data-placement="top" title="{{ portfolios|length }} Items" class="active pointer-href" data-filter="*">Tout</button>
+                    <button data-toggle="tooltip" data-placement="top" title="{{ react|length }} Items" class="pointer-href" data-filter=".cat1">React</button>
+                    <button data-toggle="tooltip" data-placement="top" title="{{ sql|length }} Items" class="pointer-href" data-filter=".cat2">SQL</button>
+                    <button data-toggle="tooltip" data-placement="top" title="{{ symfony|length }} Items" class="pointer-href" data-filter=".cat3">Symfony</button>
+                    <button data-toggle="tooltip" data-placement="top" title="{{ apis|length }} Items" class="pointer-href" data-filter=".cat4">APIs</button>
+                </div> <!-- Filter Buttons End -->
+            </div>
+        </div>
+        <!-- Portfolio Grid -->
+        <div class="row grid no-gutters">
+
+        {% if portfolios|length > 0 %}
+            {% for portfolio in portfolios %}
+
+            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 grid-item {{ portfolio.cat }}">
+                <div class="portfolio-image-block">
+                    <img src="{{ portfolio.image }}" alt="portfolio image">
+                    <div class="portfolio-image-info">
+                        <a href="{{ portfolio.image }}" class="gallery_popup pointer-open"><i class="fas fa-search"></i></a>
+                        <h4 class="body-font">{{ portfolio.name }}</h4>
+                    </div>
+                    <div class="image-hover-btn">
+                        <div class="full-view-btn">
+                            <a href="/portfolio-details/{{ portfolio.id }}" class="pointer-href">Plus d'infos</a>
+                        </div>
+                        <div class="load-more-btn">
+                            <a href="#" class="pointer-href">Lien du site</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+        {% else %}
+            <p>Aucun portfolio trouvé.</p>
+        {% endif %}
+
+        </div> 
+        <!-- Portfolio Grid End -->
+    </div>
+</main> 
+<!-- Single page end -->
+
+{% endblock %}

@@ -1,0 +1,87 @@
+{% extends '@backend/base.html.twig' %}
+
+{% block title %}Testimonial - Admin Panel!{% endblock %}
+
+{% block body %}
+
+<!-- begin app-main -->
+<div class="app-main" id="main">
+    <!-- begin container-fluid -->
+    <div class="container-fluid">
+        <!-- begin row -->
+        <div class="row">
+            <div class="col-md-12 m-b-30">
+                <!-- begin page title -->
+                <div class="d-block d-sm-flex flex-nowrap align-items-center">
+                    <div class="page-title mb-2 mb-sm-0">
+                        <h1>Modifier la recommendation</h1>
+                    </div>
+                    <div class="ml-auto d-flex align-items-center">
+                        <nav>
+                            <ol class="breadcrumb p-0 m-b-0">
+                                <li class="breadcrumb-item">
+                                    <a href="{{ path('app_dashboard') }}"><i class="ti ti-home"></i></a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    Recommendations
+                                </li>
+                                <li class="breadcrumb-item active text-primary" aria-current="page">Modifier la recommendation</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+                <!-- end page title -->
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xxl-9 m-b-30">
+                <div class="card card-statistics dating-contant h-100 mb-0">
+                    <div class="card-header d-flex align-items-center justify-content-between"> <!---->
+                        <h4 class="card-title">Edit a feedback here</h4>
+                        <div class="dropdown">
+                            <a class="btn btn-secondary" href="{{ path('app_recommendations') }}" aria-haspopup="true" aria-expanded="false">
+                                Retour
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-xxl-4 m-b-30">
+                        <div class="card card-statistics h-100 m-b-0">
+                            <div class="card-body">
+
+                                {{ form_errors(testimonialForm) }}
+                                {{ form_start(testimonialForm) }}
+                                    <div class="form-group">
+                                        {{ form_row(testimonialForm.name, {'label': false})}}
+                                    </div>
+                                    <div class="form-group"> 
+                                        {{ form_row(testimonialForm.position, {'label': false})}}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ form_row(testimonialForm.image, {'value': testimonial.image})}}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ form_row(testimonialForm.comment, {'label': false})}}
+                                    </div>
+                                    <div class="form-group">
+                                        {{ form_row(testimonialForm.linkedin, {'label': false})}}
+                                    </div>
+
+                                    <button class="btn btn-outline-primary btn-block" name="submit" type="submit">Enregistrer</button>
+                                
+                                {{ form_end(testimonialForm) }}
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+        </div>
+        <!-- end row -->
+    </div>
+</div>
+
+{% endblock %}
