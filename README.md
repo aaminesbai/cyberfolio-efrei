@@ -53,10 +53,8 @@
     php bin/console doctrine:database:create
     php bin/console doctrine:migrations:migrate
     ```
-    OU
-    ```
-    Importer le fichier SQL dans /data/
-    ```
+    **OU**
+    Importer le fichier SQL situé dans ``/data/`` dans votrre BDD.
     
 3. Rajouter les valeurs dans le .env:
     Rajouter le contenu suivant dans le `.env` : (ou `.env.local`)
