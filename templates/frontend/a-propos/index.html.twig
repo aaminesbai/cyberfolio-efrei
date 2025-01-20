@@ -27,7 +27,7 @@
         <div class="clients-testimonial-active owl-carousel">
 
         {% if recommendations|length > 0 %}
-            {% for recommendation in testimonials %}
+            {% for recommendation in recommendations %}
                 <div class="single-testimonials">
                     <div class="client-image">
                         <img src="{{ recommendation.image }}" alt="clients">
