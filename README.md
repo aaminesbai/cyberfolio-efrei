@@ -68,7 +68,7 @@
 4. Démarrer le serveur:
 
     ```bash
-    php bin/console server:run
+    symfony server:start
     ```
 
 5. Accéder l'app à [http://localhost:8000](http://localhost:8000).
